@@ -46,7 +46,7 @@ void setup() {
         String commandRoute = "/command" + String(i);
 
         server.on(commandRoute.c_str(), HTTP_GET, [i](AsyncWebServerRequest *request){
-            Serial.println("command" + String(i)); // Trigger Serial print
+            Serial.println( String(i)); // Trigger Serial print
             request->send(200, "text/plain", "Command " + String(i) + " received");
         });
     }
